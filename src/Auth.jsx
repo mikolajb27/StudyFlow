@@ -90,6 +90,9 @@ export function getAuthErrorMessage(error) {
             return "To konto jest już powiązane z innym sposobem logowania.";
         case "auth/operation-not-allowed":
             return "Ten sposób logowania nie jest włączony w projekcie Firebase.";
+        case "auth/unauthorized-domain":
+            return `Logowanie z adresu ${window.location.hostname} nie jest dozwolone. ` +
+                "Dodaj tę domenę w konsoli Firebase: Authentication → Ustawienia → Autoryzowane domeny.";
         case "auth/popup-closed-by-user":
         case "auth/cancelled-popup-request":
             return null;

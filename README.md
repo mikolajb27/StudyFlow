@@ -37,7 +37,10 @@ npm run preview
    VITE_FIREBASE_MESSAGING_SENDER_ID=1234567890
    VITE_FIREBASE_APP_ID=1:1234567890:web:abc123
    ```
-   Plik `.env.local` nie trafia do gita (jest w `.gitignore`).
+   Plik `.env.local` nie trafia do gita (jest w `.gitignore`), dlatego te same wartości są też
+   w pliku `.env.production`, który **jest** w repozytorium – z niego korzysta serwer budujący
+   aplikację z GitHuba. To nie są sekrety (konfiguracja Firebase i tak trafia do przeglądarki).
+   Klucz API Anthropic nigdy nie trafia do tych plików.
 4. **Authentication → Rozpocznij → Sign-in method:** włącz **E-mail/hasło** oraz **Google**
    (dla Google wybierz adres e-mail pomocy technicznej).
 5. **Firestore Database → Utwórz bazę danych:** lokalizacja np. `eur3 (Europa)` albo
