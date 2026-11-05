@@ -1833,6 +1833,551 @@ button.grade-final:hover {
     font-size: 13px;
 }
 
+/* LOGOWANIE */
+
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+}
+
+.auth-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: min(420px, 100%);
+    padding: 32px;
+    background: #171f30;
+    border: 1px solid #293248;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.auth-card-wide {
+    width: min(620px, 100%);
+}
+
+.auth-card .logo {
+    margin-bottom: 0;
+}
+
+.auth-tagline,
+.auth-text {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.auth-title {
+    font-size: 19px;
+}
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    padding: 4px;
+    background: #0d111c;
+    border: 1px solid #293248;
+    border-radius: 10px;
+}
+
+.auth-tabs button {
+    padding: 9px 12px;
+    color: #94a3b8;
+    background: transparent;
+}
+
+.auth-tabs button:hover {
+    color: white;
+    background: #1b2335;
+}
+
+.auth-tabs button.active {
+    color: white;
+    background: #252d43;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.auth-submit {
+    margin-top: 4px;
+    padding: 13px 18px;
+    font-size: 15px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.auth-forgot {
+    align-self: center;
+}
+
+.auth-info {
+    padding: 10px 12px;
+    color: #86efac;
+    font-size: 14px;
+    line-height: 1.5;
+    background: #14291f;
+    border: 1px solid #22c55e;
+    border-radius: 8px;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #293248;
+}
+
+.auth-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    font-size: 15px;
+}
+
+.setup-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.setup-steps code,
+.auth-text code {
+    padding: 1px 6px;
+    color: #c7d2fe;
+    font-size: 13px;
+    background: #0d111c;
+    border-radius: 4px;
+}
+
+.loading-text {
+    color: #94a3b8;
+}
+
+/* Konto w nagłówku */
+
+button.user-avatar {
+    padding: 0;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button.user-avatar:hover,
+button.user-avatar[aria-expanded="true"] {
+    background: #4f46e5;
+}
+
+.user-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-menu-name {
+    font-weight: bold;
+}
+
+.user-menu-email {
+    margin-bottom: 10px;
+    color: #94a3b8;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Komunikaty nad widokami (dane sprzed logowania, błąd zapisu) */
+
+.app-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 16px;
+    margin-bottom: 20px;
+}
+
+.app-banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* POMOC (asystent AI) */
+
+.help-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.help-section .schedule-header {
+    margin-bottom: 0;
+}
+
+.help-context {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.help-context-picker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.help-context-picker select {
+    flex: 1 1 260px;
+    max-width: 520px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.help-context-label {
+    color: #94a3b8;
+}
+
+.help-context-hint {
+    color: #64748b;
+}
+
+.help-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.help-empty {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+    color: #94a3b8;
+    line-height: 1.6;
+    background: #121827;
+    border: 1px dashed #35415a;
+    border-radius: 10px;
+}
+
+.help-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.help-suggestions button {
+    padding: 8px 12px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.help-message {
+    max-width: min(760px, 100%);
+    padding: 12px 16px;
+    line-height: 1.6;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+}
+
+.help-message.user {
+    align-self: flex-end;
+    color: white;
+    background: #4f46e5;
+    border-bottom-right-radius: 4px;
+}
+
+.help-user-text {
+    white-space: pre-wrap;
+}
+
+.help-message.assistant {
+    align-self: flex-start;
+    width: min(760px, 100%);
+    color: #e2e8f0;
+    background: #121827;
+    border: 1px solid #293248;
+    border-bottom-left-radius: 4px;
+}
+
+.help-message.assistant.refused {
+    color: #fcd34d;
+    background: #2b2414;
+    border-color: #f59e0b;
+}
+
+.help-message-attachments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.help-note {
+    margin-top: 8px;
+    color: #94a3b8;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* "Pisze..." – trzy kropki */
+.help-thinking {
+    display: flex;
+    gap: 5px;
+    padding: 6px 0;
+}
+
+.help-thinking span {
+    width: 8px;
+    height: 8px;
+    background: #818cf8;
+    border-radius: 50%;
+    animation: help-dot 1.2s infinite ease-in-out;
+}
+
+.help-thinking span:nth-child(2) { animation-delay: 0.15s; }
+.help-thinking span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes help-dot {
+    0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+    40% { opacity: 1; transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .help-thinking span { animation: none; opacity: 0.7; }
+}
+
+/* Odpowiedź w Markdown (+ wzory KaTeX) */
+
+.help-markdown > * + * {
+    margin-top: 10px;
+}
+
+.help-markdown h1,
+.help-markdown h2,
+.help-markdown h3,
+.help-markdown h4 {
+    font-size: 16px;
+    color: white;
+}
+
+.help-markdown ul,
+.help-markdown ol {
+    padding-left: 22px;
+}
+
+.help-markdown li + li {
+    margin-top: 4px;
+}
+
+.help-markdown a {
+    color: #a5b4fc;
+}
+
+.help-markdown strong {
+    color: white;
+}
+
+.help-markdown code {
+    padding: 1px 5px;
+    font-size: 0.9em;
+    color: #c7d2fe;
+    background: #0d111c;
+    border-radius: 4px;
+}
+
+.help-markdown pre {
+    padding: 12px 14px;
+    overflow-x: auto;
+    background: #0d111c;
+    border: 1px solid #293248;
+    border-radius: 8px;
+}
+
+.help-markdown pre code {
+    padding: 0;
+    background: none;
+}
+
+.help-markdown blockquote {
+    padding-left: 12px;
+    color: #94a3b8;
+    border-left: 3px solid #35415a;
+}
+
+.help-markdown table {
+    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+}
+
+.help-markdown th,
+.help-markdown td {
+    padding: 6px 10px;
+    border: 1px solid #35415a;
+}
+
+.help-markdown .katex-display {
+    margin: 10px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* Pole pytania – przyklejone do dołu ekranu */
+
+.help-composer {
+    position: sticky;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    background: #121827;
+    border: 1px solid #35415a;
+    border-radius: 12px;
+    box-shadow: 0 -10px 30px rgba(13, 17, 28, 0.85);
+}
+
+.help-composer.dragging {
+    border-color: #818cf8;
+    border-style: dashed;
+}
+
+.help-composer-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.help-input {
+    flex: 1;
+    min-width: 0;
+    max-height: 200px;
+    padding: 10px 12px;
+    resize: none;
+    line-height: 1.5;
+}
+
+.help-send {
+    flex-shrink: 0;
+    min-height: 44px;
+}
+
+.help-composer .icon-button {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+}
+
+.help-attachments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.help-attachments li {
+    position: relative;
+}
+
+.help-attachment {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 220px;
+    padding: 4px 10px 4px 4px;
+    font-size: 13px;
+    color: #cbd5e1;
+    background: #0d111c;
+    border: 1px solid #293248;
+    border-radius: 8px;
+}
+
+.help-message.user .help-attachment {
+    color: white;
+    background: rgba(13, 17, 28, 0.35);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.help-attachment img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.help-attachment-pdf {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fca5a5;
+    background: #3a202a;
+    border-radius: 5px;
+}
+
+.help-attachment-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.help-attachment-remove {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+    color: white;
+    background: #475569;
+    border-radius: 50%;
+}
+
+.help-attachment-remove:hover {
+    background: #dc2626;
+}
+
+.help-error {
+    margin-top: -4px;
+}
+
+.help-disclaimer {
+    color: #64748b;
+    font-size: 12px;
+    text-align: center;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 1000px) {
@@ -1941,6 +2486,27 @@ button.grade-final:hover {
 
     .main-content {
         padding: 20px;
+    }
+
+    .auth-card {
+        padding: 24px 20px;
+    }
+
+    .help-message {
+        padding: 10px 12px;
+    }
+
+    .help-composer {
+        bottom: 8px;
+        padding: 10px;
+    }
+
+    .help-composer-row {
+        gap: 6px;
+    }
+
+    .help-send {
+        padding: 10px 12px;
     }
 
     /* Statystyki 2×2, żeby najbliższe zajęcia i termin były od razu widoczne */
