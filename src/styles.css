@@ -2276,9 +2276,11 @@ button.user-avatar[aria-expanded="true"] {
 .help-input {
     flex: 1;
     min-width: 0;
-    max-height: 200px;
-    padding: 10px 12px;
+    min-height: 96px;  /* ~3 linie na start */
+    max-height: 340px; /* dalej rośnie z treścią, potem przewijanie */
+    padding: 12px 14px;
     resize: none;
+    font-size: 15px;
     line-height: 1.5;
 }
 

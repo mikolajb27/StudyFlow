@@ -396,7 +396,7 @@ export function HelpView() {
                     <textarea
                         ref={textareaRef}
                         className="form-field help-input"
-                        rows={1}
+                        rows={3}
                         placeholder="Napisz pytanie… (Enter – wyślij, Shift+Enter – nowa linia)"
                         aria-label="Pytanie do asystenta"
                         value={draft}
