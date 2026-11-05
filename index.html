@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow - Twój organizer nauki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+            <h2 class="logo">Study<span>Flow</span></h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">Moje zadania</a>
+                <a href="#">Kalendarz</a>
+                <a href="#">Przedmioty</a>
+                <a href="#">Statystyki</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                StudyFlow v0.1
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="subtitle">TWÓJ PANEL</p>
+                    <h1>Witaj w StudyFlow!</h1>
+                </div>
+
+                <div class="user-avatar">MB</div>
+            </header>
+
+            <section class="stats">
+
+                <div class="stat-card">
+                    <p>Wszystkie zadania</p>
+                    <h2 id="totalTasks">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Ukończone</p>
+                    <h2 id="completedTasks">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Pozostałe</p>
+                    <h2 id="remainingTasks">0</h2>
+                </div>
+
+            </section>
+
+            <section class="tasks-section">
+
+                <div class="section-header">
+                    <div>
+                        <p class="subtitle">ORGANIZACJA</p>
+                        <h2>Twoje zadania</h2>
+                    </div>
+                </div>
+
+                <form id="taskForm">
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Co masz dzisiaj do zrobienia?"
+                        required
+                    >
+
+                    <button type="submit">+ Dodaj zadanie</button>
+                </form>
+
+                <div id="taskList" class="task-list">
+                    <p class="empty-message">
+                        Nie masz jeszcze żadnych zadań.
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
