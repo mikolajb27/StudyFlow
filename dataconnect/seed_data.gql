@@ -1,0 +1,21 @@
+mutation CreateSeedData @transaction {
+  user_insertMany(data: [
+    { email: "alice@example.com", createdAt: "2023-01-01T10:00:00Z", displayName: "Alice", avatarUrl: "https://example.com/alice.jpg" },
+    { email: "bob@example.com", createdAt: "2023-01-02T11:00:00Z", displayName: "Bob", avatarUrl: "https://example.com/bob.jpg" },
+    { email: "charlie@example.com", createdAt: "2023-01-03T12:00:00Z", displayName: "Charlie", avatarUrl: "https://example.com/charlie.jpg" }
+  ])
+  project_insertMany(data: [
+    { title: "Project Alpha", user: { id: "00000000-0000-0000-0000-000000000001" }, description: "First project", colorCode: "#FF0000" },
+    { title: "Project Beta", user: { id: "00000000-0000-0000-0000-000000000002" }, description: "Second project", colorCode: "#00FF00" }
+  ])
+  task_insertMany(data: [
+    { title: "Build feature A", status: "TODO", user: { id: "00000000-0000-0000-0000-000000000001" }, priority: 1 },
+    { title: "Fix bug B", status: "IN_PROGRESS", user: { id: "00000000-0000-0000-0000-000000000002" }, priority: 2 },
+    { title: "Review docs", status: "DONE", user: { id: "00000000-0000-0000-0000-000000000003" }, priority: 3 }
+  ])
+  category_insertMany(data: [
+    { name: "Development", user: { id: "00000000-0000-0000-0000-000000000001" }, icon: "code" },
+    { name: "Design", user: { id: "00000000-0000-0000-0000-000000000002" }, icon: "palette" },
+    { name: "Management", user: { id: "00000000-0000-0000-0000-000000000003" }, icon: "tasks" }
+  ])
+}

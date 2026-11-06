@@ -1,0 +1,99 @@
+mutation CreateCategory($name: String!, $icon: String) @auth(level: USER) {
+  category_insert(data: { name: $name, icon: $icon, userId_expr: "auth.uid" })
+}
+
+mutation DeleteCategory($id: UUID!) @auth(level: USER) {
+  category_delete(key: { id: $id })
+}
+
+mutation UpdateCategory($id: UUID!, $name: String) @auth(level: USER) {
+  category_update(key: { id: $id }, data: { name: $name })
+}
+
+query GetCategory($id: UUID!) @auth(level: USER) {
+  category(id: $id) { id name icon }
+}
+
+query ListCategories @auth(level: USER) {
+  categories(where: { userId: { eq_expr: "auth.uid" } }) { id name icon }
+}
+
+mutation CreateProject($title: String!, $description: String, $colorCode: String) @auth(level: USER) {
+  project_insert(data: { title: $title, description: $description, colorCode: $colorCode, userId_expr: "auth.uid" })
+}
+
+mutation DeleteProject($id: UUID!) @auth(level: USER) {
+  project_delete(key: { id: $id })
+}
+
+mutation UpdateProject($id: UUID!, $title: String) @auth(level: USER) {
+  project_update(key: { id: $id }, data: { title: $title })
+}
+
+query GetProject($id: UUID!) @auth(level: USER) {
+  project(id: $id) { id title description colorCode }
+}
+
+query ListProjects @auth(level: USER) {
+  projects(where: { userId: { eq_expr: "auth.uid" } }) { id title description }
+}
+
+mutation CreateTask($title: String!, $status: String!, $projectId: UUID, $dueDate: Timestamp, $priority: Int) @auth(level: USER) {
+  task_insert(data: { title: $title, status: $status, projectId: $projectId, dueDate: $dueDate, priority: $priority, userId_expr: "auth.uid" })
+}
+
+mutation DeleteTask($id: UUID!) @auth(level: USER) {
+  task_delete(key: { id: $id })
+}
+
+mutation UpdateTask($id: UUID!, $status: String) @auth(level: USER) {
+  task_update(key: { id: $id }, data: { status: $status })
+}
+
+query GetTask($id: UUID!) @auth(level: USER) {
+  task(id: $id) { id title status dueDate priority }
+}
+
+query ListTasks @auth(level: USER) {
+  tasks(where: { userId: { eq_expr: "auth.uid" } }) { id title status }
+}
+
+mutation CreateTaskCategory($taskId: UUID!, $categoryId: UUID!) @auth(level: USER) {
+  taskCategory_insert(data: { taskId: $taskId, categoryId: $categoryId })
+}
+
+mutation DeleteTaskCategory($taskId: UUID!, $categoryId: UUID!) @auth(level: USER) {
+  taskCategory_delete(key: { taskId: $taskId, categoryId: $categoryId })
+}
+
+mutation UpdateTaskCategory($taskId: UUID!, $categoryId: UUID!, $data: TaskCategory_Data!) @auth(level: USER) {
+  taskCategory_update(key: { taskId: $taskId, categoryId: $categoryId }, data: $data)
+}
+
+query GetTaskCategory($taskId: UUID!, $categoryId: UUID!) @auth(level: USER) {
+  taskCategory(key: { taskId: $taskId, categoryId: $categoryId }) { taskId categoryId }
+}
+
+query ListTaskCategories @auth(level: USER) {
+  taskCategories { taskId categoryId }
+}
+
+mutation CreateUser($email: String!, $displayName: String) @auth(level: USER) {
+  user_insert(data: { id_expr: "auth.uid", email: $email, displayName: $displayName, createdAt_expr: "request.time" })
+}
+
+mutation DeleteUser @auth(level: USER) {
+  user_delete(key: { id_expr: "auth.uid" })
+}
+
+mutation UpdateUser($displayName: String) @auth(level: USER) {
+  user_update(key: { id_expr: "auth.uid" }, data: { displayName: $displayName })
+}
+
+query GetUser @auth(level: USER) {
+  user(key: { id_expr: "auth.uid" }) { email displayName avatarUrl }
+}
+
+query ListUsers @auth(level: USER) {
+  users { id displayName email }
+}

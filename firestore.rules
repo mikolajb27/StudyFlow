@@ -1,6 +1,5 @@
 rules_version = '2';
 
-// Każdy zalogowany użytkownik widzi i zmienia tylko własne dane: users/{jego uid}/...
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{userId}/{document=**} {
